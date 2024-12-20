@@ -1,48 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
+  </head>
 
-<body>
+  <body>
+    <div
+      id="overlay"
+      class="hidden absolute top-0 bottom-0 left-0 right-0 bg-[rgba(0,0,0,0.6)] z-10"
+      onclick="toggleModal()"
+    ></div>
+    <div
+      id="modal"
+      class="hidden absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-20 w-2/4 rounded-md shadow-md bg-white p-4"
+    ></div>
     <header class="bg-blue-400 flex justify-between items-center p-8 text-2xl text-white">
-        <h1>to do app</h1>
-        <button class="bg-gray-700 rounded-md p-4 shadow-xl">add task</button>
+      <h1>to do app</h1>
+      <button class="bg-gray-700 rounded-md p-4 shadow-xl" onclick="addTaskModalShow()">add task</button>
     </header>
     <main>
-        <table class="w-full border-collapse">
-            <thead>
-                <tr class="border border-black text-xl ">
-                    <th class="border border-black">task name</th>
-                    <th class="border border-black">description</th>
-                    <th class="border border-black">status</th>
-                    <th class="border border-black">actions</th>
-                </tr>
-            </thead>
-            <tbody class="text-center" id="taskBox">
-                <tr>
-                    <td class="border border-black">my task</td>
-                    <td class="border border-black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id eveniet
-                        hic cum exercitationem quasi labor.</td>
-                    <td class="border border-black">low</td>
-                    <td class="border border-black p-4 ">
-                        <div class="flex gap-5 justify-center">
-                            <button class="bg-red-500 rounded-md p-1">delete</button>
-                            <button class="bg-green-500 rounded-md p-1">edit</button>
-                            <button class="bg-yellow-500 rounded-md p-1">view</button>
-                        </div>
-
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="border border-black text-xl">
+            <th class="border border-black">task name</th>
+            <th class="border border-black">description</th>
+            <th class="border border-black">status</th>
+            <th class="border border-black">actions</th>
+          </tr>
+        </thead>
+        <tbody class="text-center" id="taskBox"></tbody>
+      </table>
     </main>
 
     <script src="./script.js"></script>
-</body>
-
+  </body>
 </html>
